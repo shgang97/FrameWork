@@ -1,5 +1,6 @@
 package com.shgang.spring5.ioc_demo2.testdemo;
 
+import com.shgang.spring5.ioc_demo2.autowrite.Emp;
 import com.shgang.spring5.ioc_demo2.bean.Orders;
 import com.shgang.spring5.ioc_demo2.collectiontype.Book;
 import com.shgang.spring5.ioc_demo2.collectiontype.Course;
@@ -8,6 +9,13 @@ import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class IocTest {
+
+	@Test
+	public void testEmp() {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("com/shgang/spring5/ioc_demo2/bean6.xml");
+		Emp emp = context.getBean("emp", Emp.class);
+		emp.print();
+	}
 
 	@Test
 	public void testOrderWithProcessor() {
